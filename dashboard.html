@@ -23,6 +23,7 @@
     <nav class="section-nav">
         <button data-section="jurnalSection" class="btn btn-nav">Input Jurnal</button>
         <button data-section="nilaiSection" class="btn btn-nav">Input Nilai</button>
+        <!-- [DITAMBAHKAN] Tombol navigasi untuk Rekap Nilai -->
         <button data-section="rekapSection" class="btn btn-nav">Rekap Nilai</button>
         <button data-section="riwayatSection" class="btn btn-nav">Riwayat Jurnal</button>
         <button data-section="siswaSection" class="btn btn-nav">Manajemen Siswa</button>
@@ -105,15 +106,6 @@
                         <div id="jenisNilaiSaran" class="rekomendasi-container hidden"></div>
                     </div>
 
-                    <!-- [DITAMBAHKAN KEMBALI] Bagian ini diperlukan oleh JavaScript v6.2 -->
-                    <div class="form-group">
-                        <label>Tipe Penilaian</label>
-                        <div style="display: flex; gap: 20px;">
-                            <label style="font-weight: normal; cursor: pointer;"><input type="radio" name="tipePenilaian" value="angka" id="tipeAngka" checked> Angka</label>
-                            <label style="font-weight: normal; cursor: pointer;"><input type="radio" name="tipePenilaian" value="deskripsi" id="tipeDeskripsi"> Deskripsi</label>
-                        </div>
-                    </div>
-
                     <h4 style="margin-top: 2rem; margin-bottom: 1rem;">Daftar Nilai Siswa</h4>
                     <div class="table-container">
                         <form id="formNilai">
@@ -136,7 +128,7 @@
         </div>
 
         <!-- ====================================================== -->
-        <!-- Bagian 3: REKAP NILAI                                  -->
+        <!-- [DITAMBAHKAN] Bagian 3: REKAP NILAI                    -->
         <!-- ====================================================== -->
         <div id="rekapSection" class="content-section" style="display: none;">
             <div class="card">
