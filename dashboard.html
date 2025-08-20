@@ -23,7 +23,6 @@
     <nav class="section-nav">
         <button data-section="jurnalSection" class="btn btn-nav">Input Jurnal</button>
         <button data-section="nilaiSection" class="btn btn-nav">Input Nilai</button>
-        <!-- [DITAMBAHKAN] Tombol navigasi untuk Rekap Nilai -->
         <button data-section="rekapSection" class="btn btn-nav">Rekap Nilai</button>
         <button data-section="riwayatSection" class="btn btn-nav">Riwayat Jurnal</button>
         <button data-section="siswaSection" class="btn btn-nav">Manajemen Siswa</button>
@@ -42,11 +41,10 @@
         <div id="jurnalSection" class="content-section" style="display: none;">
             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
                 <div class="card"><h5 style="color: var(--text-light); margin-bottom: 0.5rem;">Jurnal Bulan Ini</h5><h2 id="statTotalJurnal">...</h2></div>
-                <!-- [DIPERBARUI] Label disesuaikan dengan logika backend baru -->
                 <div class="card">
                     <h5 style="color: var(--text-light); margin-bottom: 0.5rem;">Siswa Tidak Hadir (Bulan Ini)</h5>
                     <h2 id="statKehadiran">...</h2>
-                </div>
+                </div>                
                 <div class="card"><h5 style="color: var(--text-light); margin-bottom: 0.5rem;">Mapel Terpopuler</h5><h2 id="statMapelTeratas">...</h2></div>
             </div>
             <div class="card">
@@ -107,7 +105,14 @@
                         <div id="jenisNilaiSaran" class="rekomendasi-container hidden"></div>
                     </div>
 
-                    <!-- [DIHAPUS] Bagian Tipe Penilaian (Angka/Deskripsi) dihilangkan untuk penyederhanaan -->
+                    <!-- [DITAMBAHKAN KEMBALI] Bagian ini diperlukan oleh JavaScript v6.2 -->
+                    <div class="form-group">
+                        <label>Tipe Penilaian</label>
+                        <div style="display: flex; gap: 20px;">
+                            <label style="font-weight: normal; cursor: pointer;"><input type="radio" name="tipePenilaian" value="angka" id="tipeAngka" checked> Angka</label>
+                            <label style="font-weight: normal; cursor: pointer;"><input type="radio" name="tipePenilaian" value="deskripsi" id="tipeDeskripsi"> Deskripsi</label>
+                        </div>
+                    </div>
 
                     <h4 style="margin-top: 2rem; margin-bottom: 1rem;">Daftar Nilai Siswa</h4>
                     <div class="table-container">
@@ -131,7 +136,7 @@
         </div>
 
         <!-- ====================================================== -->
-        <!-- [DITAMBAHKAN] Bagian 3: REKAP NILAI                    -->
+        <!-- Bagian 3: REKAP NILAI                                  -->
         <!-- ====================================================== -->
         <div id="rekapSection" class="content-section" style="display: none;">
             <div class="card">
@@ -193,7 +198,6 @@
                 <h4>Hasil Pencarian Riwayat</h4>
                 <div class="table-container">
                     <table>
-                        <!-- [DIPERBARUI] Header kolom disesuaikan -->
                         <thead><tr><th>Tanggal</th><th>Kelas</th><th>Semester</th><th>Mata Pelajaran</th><th>Materi</th><th>Siswa Tidak Hadir</th><th>Aksi</th></tr></thead>
                         <tbody id="riwayatTableBody">
                             <tr>
